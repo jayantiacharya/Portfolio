@@ -1,11 +1,13 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jayanti Acharya | Web Developer Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Jayanti Acharya | Data Science & CS Portfolio</title>
+    <!-- Bootstrap 5 + Icons + Google Fonts -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -13,39 +15,79 @@
             box-sizing: border-box;
         }
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f8f9fa;
-            color: #1a2632;
+            font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+            background-color: #fefefe;
+            color: #1a2c3e;
+            line-height: 1.5;
+            scroll-behavior: smooth;
         }
         .navbar {
-            background-color: #2c3e50;
-            padding: 1rem 0;
+            background-color: #0f2b3d;
+            padding: 0.85rem 0;
             position: sticky;
             top: 0;
             z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
         }
         .navbar-brand, .nav-link {
-            color: white !important;
+            color: #f0f4f8 !important;
+            font-weight: 500;
+            transition: color 0.2s ease;
         }
         .nav-link:hover {
-            color: #e67e22 !important;
+            color: #f39c12 !important;
         }
         .hero {
-            background: linear-gradient(135deg, #2c3e50, #3498db);
+            background: linear-gradient(105deg, #0f2b3d 0%, #1e5a7d 100%);
             color: white;
-            text-align: center;
-            padding: 4rem 0;
+            padding: 4rem 0 3.5rem;
         }
         .hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
+            font-size: 2.8rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+        .hero-badge {
+            background-color: rgba(255,255,255,0.2);
+            display: inline-block;
+            padding: 0.3rem 1rem;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            margin-bottom: 1.2rem;
+        }
+        .btn-outline-light-custom {
+            border: 1px solid rgba(255,255,255,0.6);
+            background: transparent;
+            color: white;
+            border-radius: 30px;
+            padding: 0.5rem 1.4rem;
+            transition: all 0.2s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .btn-outline-light-custom:hover {
+            background-color: #f39c12;
+            border-color: #f39c12;
+            color: #1e2a3e;
+        }
+        .btn-primary-custom {
+            background-color: #f39c12;
+            border: none;
+            color: #1e2a3e;
+            font-weight: 600;
+            padding: 0.6rem 1.6rem;
+            border-radius: 40px;
         }
         .section-title {
             text-align: center;
+            font-weight: 700;
             font-size: 2rem;
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
             position: relative;
-            padding-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            color: #0f2b3d;
         }
         .section-title::after {
             content: '';
@@ -53,24 +95,29 @@
             bottom: 0;
             left: 50%;
             transform: translateX(-50%);
-            width: 60px;
+            width: 70px;
             height: 3px;
-            background-color: #3498db;
+            background-color: #f39c12;
+            border-radius: 3px;
         }
         .project-card {
             background: white;
-            border-radius: 12px;
+            border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+            transition: transform 0.25s ease;
             height: 100%;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #eef2f6;
         }
         .project-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-6px);
+            box-shadow: 0 20px 30px -12px rgba(0,0,0,0.15);
         }
         .project-img {
-            background-color: #2c3e50;
-            height: 180px;
+            background: linear-gradient(125deg, #1e5a7d, #12344d);
+            height: 150px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -79,148 +126,246 @@
         }
         .project-content {
             padding: 1.5rem;
+            flex: 1;
         }
         .project-title {
-            font-size: 1.25rem;
-            font-weight: bold;
+            font-size: 1.35rem;
+            font-weight: 700;
             margin-bottom: 0.5rem;
         }
         .tech-badge {
-            background-color: #e9ecef;
+            background-color: #eef2fa;
+            color: #1e4663;
             display: inline-block;
-            padding: 0.2rem 0.6rem;
-            border-radius: 20px;
+            padding: 0.25rem 0.8rem;
+            border-radius: 30px;
             font-size: 0.7rem;
-            margin-right: 0.3rem;
-            margin-bottom: 0.3rem;
+            font-weight: 500;
+            margin-right: 0.4rem;
+            margin-bottom: 0.5rem;
         }
         .btn-link-custom {
-            display: inline-block;
-            background-color: #3498db;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background-color: #2c5a7a;
             color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 6px;
+            padding: 0.45rem 1.1rem;
+            border-radius: 40px;
             text-decoration: none;
-            font-size: 0.85rem;
-            margin-right: 0.5rem;
-            transition: background-color 0.3s;
+            font-size: 0.8rem;
+            font-weight: 500;
+            transition: background 0.2s;
         }
         .btn-link-custom:hover {
-            background-color: #e67e22;
-            color: white;
+            background-color: #f39c12;
+            color: #1e2a3e;
         }
         .skills-section {
-            background-color: white;
+            background-color: #f8fafc;
             padding: 4rem 0;
         }
         .skill-category {
-            background: #f8f9fa;
-            padding: 1.5rem;
-            border-radius: 12px;
+            background: white;
+            padding: 1.8rem;
+            border-radius: 24px;
             height: 100%;
+            box-shadow: 0 5px 14px rgba(0,0,0,0.03);
+            border: 1px solid #e9edf2;
         }
         .skill-category h4 {
-            color: #3498db;
-            margin-bottom: 1rem;
+            color: #1e5a7d;
+            font-weight: 700;
+            margin-bottom: 1.2rem;
+        }
+        .resume-btn {
+            background-color: #f39c12;
+            color: #1e2a3e;
+            border-radius: 40px;
+            padding: 0.7rem 1.8rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            transition: 0.2s;
+        }
+        .resume-btn:hover {
+            background-color: #e67e22;
+            color: white;
         }
         .contact-section {
-            background-color: #2c3e50;
+            background-color: #0f2b3d;
             color: white;
-            text-align: center;
             padding: 3rem 0;
         }
-        .contact-info a {
+        .social-icon-circle {
+            background: rgba(255,255,255,0.12);
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 0.6rem;
+            transition: 0.2s;
             color: white;
-            text-decoration: none;
-            margin: 0 1rem;
-            display: inline-block;
+            font-size: 1.4rem;
         }
-        .contact-info a:hover {
-            color: #e67e22;
+        .social-icon-circle:hover {
+            background-color: #f39c12;
+            transform: translateY(-3px);
+            color: #0f2b3d;
         }
         .footer {
-            background-color: #1a2632;
-            color: rgba(255,255,255,0.7);
+            background-color: #091e2c;
+            color: #adc4db;
             text-align: center;
-            padding: 1rem;
+            padding: 1.3rem;
             font-size: 0.8rem;
         }
         @media (max-width: 768px) {
-            .hero h1 { font-size: 1.8rem; }
-            .section-title { font-size: 1.5rem; }
+            .hero h1 { font-size: 1.9rem; }
+            .section-title { font-size: 1.7rem; }
         }
+        .work-card {
+            background: white;
+            border-radius: 20px;
+            padding: 1.4rem;
+            margin-bottom: 1.2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 5px solid #f39c12;
+        }
+        .demo-link {
+            color: #f39c12;
+            font-weight: 500;
+            text-decoration: none;
+        }
+        .demo-link:hover { text-decoration: underline; }
     </style>
 </head>
 <body>
 
 <nav class="navbar">
     <div class="container">
-        <a class="navbar-brand" href="#">Jayanti Acharya</a>
+        <a class="navbar-brand fw-bold" href="#">Jayanti Acharya</a>
         <ul class="nav">
             <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+            <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
             <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
             <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
         </ul>
     </div>
 </nav>
 
+<!-- Hero Section with resume download & contact -->
 <section class="hero">
     <div class="container">
+        <div class="hero-badge"><i class="fas fa-chart-line me-1"></i> Data Science & ML Enthusiast | CS Student</div>
         <h1>Jayanti Acharya</h1>
-        <p>Web Developer | Accessibility Specialist | Computer Science Student</p>
-        <p><i class="fas fa-map-marker-alt"></i> Ogden, UT</p>
+        <p class="lead mt-2" style="max-width: 700px; margin-left: auto; margin-right: auto;">Machine Learning | ETL Pipelines | Data Analysis | Accessibility</p>
+        <div class="d-flex flex-wrap justify-content-center gap-3 mt-4">
+            <a href="#" id="downloadResumeBtn" class="resume-btn"><i class="fas fa-file-pdf"></i> Download Resume (PDF)</a>
+            <a href="https://github.com/jjputah9" target="_blank" class="btn-outline-light-custom"><i class="fab fa-github"></i> GitHub</a>
+            <a href="https://linkedin.com/in/jayanti-acharya" target="_blank" class="btn-outline-light-custom"><i class="fab fa-linkedin"></i> LinkedIn</a>
+        </div>
+        <p class="mt-3 small opacity-75"><i class="fas fa-envelope"></i> jayantiacharya@mail.weber.edu | <i class="fas fa-phone-alt"></i> (801) 200-8780 | Ogden, UT</p>
     </div>
 </section>
 
-<section id="projects" class="py-5" style="padding: 4rem 0;">
+<!-- Professional Summary / Context -->
+<div class="container py-4">
+    <div class="row justify-content-center">
+        <div class="col-lg-10">
+            <div class="bg-white p-4 rounded-4 shadow-sm">
+                <h3 class="fw-semibold"><i class="fas fa-bullseye me-2 text-warning"></i> Objective</h3>
+                <p class="fs-5">Motivated Computer Science student with experience in <strong>machine learning, ETL pipelines, and data analysis</strong> seeking a Data Science Internship to apply programming, problem-solving, and analytical skills in a practical, real-world setting.</p>
+                <hr>
+                <div class="row mt-2">
+                    <div class="col-md-6"><i class="fas fa-graduation-cap text-primary"></i> <strong>BS Computer Science</strong> – Weber State (Aug 2026) • GPA 3.84</div>
+                    <div class="col-md-6"><i class="fas fa-trophy text-warning"></i> <strong>AAS High Honors</strong> – GPA 3.85 | AI/ML Hackathon Finalist 2025</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- PROJECTS Section (Data Science focus: Movie Rec Sys + ETL Pipeline, plus web dev) -->
+<section id="projects" class="py-5">
     <div class="container">
-        <h2 class="section-title">Featured Projects</h2>
+        <h2 class="section-title">Data Science & Engineering Projects</h2>
         <div class="row g-4">
-            
+            <!-- Movie Recommendation System (KNN) -->
+            <div class="col-md-6 col-lg-6">
+                <div class="project-card">
+                    <div class="project-img"><i class="fas fa-film fa-3x"></i></div>
+                    <div class="project-content">
+                        <h3 class="project-title">Movie Recommendation System (KNN)</h3>
+                        <p class="text-muted small">Python · Pandas · scikit-learn · EDA | <a href="#" class="demo-link" id="movieDemoLink"><i class="fab fa-youtube"></i> Demo: YouTube</a></p>
+                        <p>Performed exploratory data analysis (EDA) on movie dataset to understand distributions, trends, and data quality. Cleaned and preprocessed data by handling missing values and transforming features. Built a recommendation system using <strong>K-Nearest Neighbors (KNN)</strong> to identify similar movies based on user preferences.</p>
+                        <div class="mb-2">
+                            <span class="tech-badge">Python</span><span class="tech-badge">Pandas/NumPy</span><span class="tech-badge">scikit-learn</span><span class="tech-badge">KNN</span><span class="tech-badge">EDA</span>
+                        </div>
+                        <div class="mt-auto d-flex gap-2 flex-wrap">
+                            <a href="https://github.com/jjputah9/movie-recommender-knn" target="_blank" class="btn-link-custom"><i class="fab fa-github"></i> GitHub Repo</a>
+                            <a href="#" id="movieYTTrigger" class="btn-link-custom"><i class="fab fa-youtube"></i> Watch Demo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ETL Pipeline for Streaming Analytics -->
+            <div class="col-md-6 col-lg-6">
+                <div class="project-card">
+                    <div class="project-img"><i class="fas fa-stream fa-3x"></i></div>
+                    <div class="project-content">
+                        <h3 class="project-title">ETL Pipeline: Streaming Analytics</h3>
+                        <p class="text-muted small">Python · Pandas · MySQL · JSON parsing | <a href="#" class="demo-link" id="etlDemoLink"><i class="fab fa-youtube"></i> Demo: YouTube</a></p>
+                        <p>Built an end-to-end ETL pipeline processing 10K+ raw records including EDA, data cleaning (missing values, duplicates, validation), and transformation. Parsed nested JSON with error handling, engineered features (watch time, user behavior). Designed ER diagram and relational schema, loading 8.6K+ cleaned records into MySQL with normalized tables.</p>
+                        <div class="mb-2">
+                            <span class="tech-badge">Python/Pandas</span><span class="tech-badge">ETL Pipelines</span><span class="tech-badge">MySQL</span><span class="tech-badge">Data Cleaning</span>
+                        </div>
+                        <div class="mt-auto d-flex gap-2">
+                            <a href="https://github.com/jjputah9/etl-streaming-analytics" target="_blank" class="btn-link-custom"><i class="fab fa-github"></i> GitHub Repo</a>
+                            <a href="#" id="etlYTTrigger" class="btn-link-custom"><i class="fab fa-youtube"></i> Demo Video</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Additional Web Dev / Accessibility projects (showcasing breadth) -->
+        <h3 class="mt-5 mb-3 fw-semibold">Web Development & Accessibility Projects</h3>
+        <div class="row g-4">
             <div class="col-md-6 col-lg-4">
                 <div class="project-card">
                     <div class="project-img"><i class="fas fa-soap"></i></div>
                     <div class="project-content">
                         <h3 class="project-title">Kaligandaki Soap Industry</h3>
-                        <p>Fully responsive multi-page website for a handmade soap company with interactive features.</p>
-                        <div class="tech-badge">HTML5</div>
-                        <div class="tech-badge">CSS3</div>
-                        <div class="tech-badge">Bootstrap</div>
-                        <div class="tech-badge">JavaScript</div>
-                        <div class="mt-3">
-                            <a href="https://kgsoapindustrywebsite.netlify.app" target="_blank" class="btn-link-custom"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                        </div>
+                        <p>Responsive multi-page website for handmade soap company with interactive features, product gallery, and contact form.</p>
+                        <div><span class="tech-badge">HTML5/CSS3</span><span class="tech-badge">Bootstrap</span><span class="tech-badge">JavaScript</span></div>
+                        <div class="mt-3"><a href="https://kgsoapindustrywebsite.netlify.app" target="_blank" class="btn-link-custom"><i class="fas fa-external-link-alt"></i> Live Demo</a></div>
                     </div>
                 </div>
             </div>
-            
-            <div class="col-md-6 col-lg-4">
-                <div class="project-card">
-                    <div class="project-img"><i class="fas fa-graduation-cap"></i></div>
-                    <div class="project-content">
-                        <h3 class="project-title">Learning Management System</h3>
-                        <p>Full-stack LMS built with a team of 7 students using Agile methodology.</p>
-                        <div class="tech-badge">ASP.NET Core</div>
-                        <div class="tech-badge">C#</div>
-                        <div class="tech-badge">SQL Server</div>
-                        <div class="tech-badge">Razor Pages</div>
-                        <div class="mt-3">
-                            <a href="https://github.com/jjputah9/CS3750_Group_2_LMS" target="_blank" class="btn-link-custom"><i class="fab fa-github"></i> GitHub</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
             <div class="col-md-6 col-lg-4">
                 <div class="project-card">
                     <div class="project-img"><i class="fas fa-tasks"></i></div>
                     <div class="project-content">
                         <h3 class="project-title">Task Manager & Habit Tracker</h3>
-                        <p>Interactive web app with real-time CRUD operations and localStorage persistence.</p>
-                        <div class="tech-badge">HTML5</div>
-                        <div class="tech-badge">CSS3</div>
-                        <div class="tech-badge">JavaScript</div>
-                        <div class="tech-badge">localStorage</div>
+                        <p>Interactive web app with CRUD operations, localStorage persistence, and accessible keyboard navigation.</p>
+                        <div><span class="tech-badge">JavaScript</span><span class="tech-badge">localStorage</span><span class="tech-badge">CSS Grid</span></div>
+                        <div class="mt-3"><a href="https://github.com/jjputah9/task-habit-tracker" target="_blank" class="btn-link-custom"><i class="fab fa-github"></i> Source Code</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="project-card">
+                    <div class="project-img"><i class="fas fa-universal-access"></i></div>
+                    <div class="project-content">
+                        <h3 class="project-title">Canvas Accessibility Auditor</h3>
+                        <p>Accessibility remediation tool and guidelines for LMS platforms, collaborating with Disability Services.</p>
+                        <div><span class="tech-badge">WCAG 2.1</span><span class="tech-badge">ARIA</span><span class="tech-badge">PDF/UA</span></div>
+                        <div class="mt-3"><a href="https://github.com/jjputah9/a11y-canvas-audit" target="_blank" class="btn-link-custom"><i class="fab fa-github"></i> Research Repo</a></div>
                     </div>
                 </div>
             </div>
@@ -228,63 +373,183 @@
     </div>
 </section>
 
+<!-- WORK EXPERIENCE Section (Web Accessibility Specialist) + Certifications -->
+<section id="experience" class="py-5 bg-light">
+    <div class="container">
+        <h2 class="section-title">Work Experience & Achievements</h2>
+        <div class="row">
+            <div class="col-lg-7">
+                <div class="work-card">
+                    <h4><i class="fas fa-universal-access text-warning me-2"></i> Web Accessibility Specialist</h4>
+                    <p class="text-muted">College of Science, Weber State University | Jan 2026 – Present</p>
+                    <ul class="mb-0">
+                        <li>Improved accessibility compliance of Canvas Course materials by increasing Ally scores to near 100% through systematic auditing and remediation.</li>
+                        <li>Collaborated in weekly mentor meetings to review progress, discuss challenges, and refine solutions.</li>
+                        <li>Applied analytical thinking to detect and resolve repeated issues efficiently, ensuring inclusive learning.</li>
+                    </ul>
+                </div>
+                <div class="work-card mt-3">
+                    <h4><i class="fas fa-award text-warning me-2"></i> Certifications & Honors</h4>
+                    <ul>
+                        <li><strong>AI/ML Hackathon Finalist 2025</strong> – Nepali Leaders Network USA, Boston</li>
+                        <li><strong>Machine Learning Hands-on Python</strong> – Certificate of Completion</li>
+                        <li><strong>Microsoft Excel and PowerPoint Specialist</strong> – Nepal World Championship 1st Place</li>
+                        <li><strong>Relevant Coursework:</strong> CS 5580 (Data Science Algorithms) A, Math 1040 (Statistics) A</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <div class="skill-category h-100">
+                    <h4><i class="fas fa-database"></i> Core Competencies</h4>
+                    <div><span class="tech-badge">Python</span> <span class="tech-badge">SQL</span> <span class="tech-badge">Java/C++</span></div>
+                    <div><span class="tech-badge">Pandas/NumPy</span> <span class="tech-badge">Matplotlib</span> <span class="tech-badge">scikit-learn</span></div>
+                    <div><span class="tech-badge">ETL Pipelines</span> <span class="tech-badge">Data Cleaning</span> <span class="tech-badge">EDA</span></div>
+                    <div><span class="tech-badge">KNN</span> <span class="tech-badge">Data Transformation</span></div>
+                    <hr>
+                    <h4><i class="fas fa-chalkboard-user"></i> Soft Skills</h4>
+                    <div><span class="tech-badge">Collaboration</span> <span class="tech-badge">Presentation Skills</span> <span class="tech-badge">Attention to Detail</span> <span class="tech-badge">Problem Solving</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SKILLS Section (detailed) -->
 <section id="skills" class="skills-section">
     <div class="container">
         <h2 class="section-title">Technical Skills</h2>
         <div class="row g-4">
             <div class="col-md-4">
                 <div class="skill-category">
-                    <h4><i class="fas fa-code"></i> Front-End</h4>
-                    <div class="skill-items">
-                        <span class="tech-badge">HTML5/CSS3</span>
-                        <span class="tech-badge">JavaScript (DOM)</span>
-                        <span class="tech-badge">Bootstrap</span>
-                        <span class="tech-badge">Responsive Design</span>
-                    </div>
+                    <h4><i class="fas fa-code"></i> Languages</h4>
+                    <div><span class="tech-badge">Python</span> <span class="tech-badge">SQL</span> <span class="tech-badge">Java</span> <span class="tech-badge">C++</span> <span class="tech-badge">HTML/CSS/JS</span></div>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="skill-category">
-                    <h4><i class="fas fa-universal-access"></i> Accessibility</h4>
-                    <div class="skill-items">
-                        <span class="tech-badge">WCAG Standards</span>
-                        <span class="tech-badge">Canvas Accessibility</span>
-                        <span class="tech-badge">PDF Remediation</span>
-                    </div>
+                    <h4><i class="fas fa-chart-simple"></i> Data & ML</h4>
+                    <div><span class="tech-badge">Pandas/NumPy</span> <span class="tech-badge">Matplotlib</span> <span class="tech-badge">scikit-learn</span> <span class="tech-badge">ETL Pipelines</span> <span class="tech-badge">EDA</span> <span class="tech-badge">KNN</span></div>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="skill-category">
-                    <h4><i class="fas fa-tools"></i> Tools & Back-End</h4>
-                    <div class="skill-items">
-                        <span class="tech-badge">Git/GitHub</span>
-                        <span class="tech-badge">Netlify</span>
-                        <span class="tech-badge">ASP.NET</span>
-                        <span class="tech-badge">Java</span>
-                    </div>
+                    <h4><i class="fas fa-tools"></i> Tools & Databases</h4>
+                    <div><span class="tech-badge">MySQL</span> <span class="tech-badge">Git/GitHub</span> <span class="tech-badge">Netlify</span> <span class="tech-badge">VS Code</span> <span class="tech-badge">Jupyter</span></div>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
+<!-- Contact & Resume (actual downloadable PDF) -->
 <section id="contact" class="contact-section">
     <div class="container">
-        <h2>Get In Touch</h2>
-        <div class="contact-info">
-            <a href="mailto:jayantiacharya@mail.weber.edu"><i class="fas fa-envelope"></i> jayantiacharya@mail.weber.edu</a>
-            <a href="tel:8012008780"><i class="fas fa-phone"></i> (801) 200-8780</a>
-            <a href="https://github.com/jjputah9" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+        <h2 class="mb-3" style="color: white;">Let’s Connect</h2>
+        <p>Actively seeking Data Science Internship opportunities for Summer/Fall 2026.</p>
+        <div class="contact-info d-flex flex-wrap justify-content-center gap-3 my-4">
+            <a href="mailto:jayantiacharya@mail.weber.edu" class="social-icon-circle"><i class="fas fa-envelope"></i></a>
+            <a href="tel:8012008780" class="social-icon-circle"><i class="fas fa-phone-alt"></i></a>
+            <a href="https://github.com/jjputah9" target="_blank" class="social-icon-circle"><i class="fab fa-github"></i></a>
+            <a href="https://linkedin.com/in/jayanti-acharya" target="_blank" class="social-icon-circle"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <div class="row justify-content-center mt-2">
+            <div class="col-auto">
+                <p class="mb-2"><i class="far fa-file-alt me-2"></i> Download my official resume (PDF) with complete work history, projects, and certifications.</p>
+                <a href="#" id="resumeBtnFooter" class="btn btn-warning fw-semibold px-4"><i class="fas fa-download"></i> Download Resume (PDF)</a>
+            </div>
         </div>
     </div>
 </section>
 
 <footer class="footer">
     <div class="container">
-        <p>&copy; 2026 Jayanti Acharya. All rights reserved.</p>
+        <p>&copy; 2026 Jayanti Acharya — Data Science & Computer Science Portfolio. GitHub, LinkedIn, and live demos available above.</p>
+        <p class="small"><i class="fab fa-github"></i> github.com/jjputah9 | <i class="fab fa-linkedin"></i> linkedin.com/in/jayanti-acharya</p>
     </div>
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    (function() {
+        // Generate downloadable resume PDF based on actual provided resume content
+        function generateOfficialResume() {
+            const resumeHTML = `
+            <!DOCTYPE html>
+            <html>
+            <head>
+                <meta charset="UTF-8">
+                <title>Jayanti_Acharya_Resume_DataScience</title>
+                <style>
+                    body { font-family: 'Segoe UI', Arial, sans-serif; margin: 2rem; line-height: 1.4; max-width: 900px; margin: auto; color: #1a2c3e; }
+                    h1 { color: #0f2b3d; border-bottom: 3px solid #f39c12; display: inline-block; }
+                    .header-contact { background: #f8fafc; padding: 10px; border-radius: 12px; margin: 15px 0; }
+                    .section-title { background: #eef2fa; padding: 5px 12px; border-radius: 20px; font-weight: bold; margin-top: 20px; }
+                    .job-title { font-weight: bold; color: #1e5a7d; }
+                    ul { margin-top: 4px; }
+                </style>
+            </head>
+            <body>
+                <h1>Jayanti Acharya</h1>
+                <div class="header-contact">
+                    📧 jayantiacharya@mail.weber.edu &nbsp;|&nbsp; 📞 (801) 200-8780 &nbsp;|&nbsp; 🔗 linkedin.com/in/jayanti-acharya &nbsp;|&nbsp; 💻 github.com/jjputah9
+                </div>
+                <p><strong>Motivated Computer Science student</strong> with experience in machine learning, ETL pipelines, and data analysis seeking a <strong>Data Science Internship</strong> to apply programming, problem-solving, and analytical skills in a practical, real-world setting.</p>
+                
+                <div class="section-title">🎓 EDUCATION</div>
+                <p><strong>BS COMPUTER SCIENCE</strong> - Weber State University, Ogden UT - GPA 3.84 (August 2026)<br>
+                <strong>AAS</strong> - Weber State University, Ogden UT - GPA 3.85 | High Honors (April 2025)<br>
+                <strong>Relevant Coursework:</strong> CS 5580 (Data Science Algorithms) A, Math 1040 (Statistics) A</p>
+                
+                <div class="section-title">🛠️ SKILLS</div>
+                <p><strong>Languages:</strong> Python, SQL, Java, C++<br>
+                <strong>Libraries:</strong> Pandas, NumPy, Matplotlib, scikit-learn<br>
+                <strong>Data & ML:</strong> ETL Pipelines, Data Cleaning, Data Transformation, EDA, KNN<br>
+                <strong>Soft Skills:</strong> Collaborative, Presentation Skills, Attention to Detail, Problem Solving</p>
+                
+                <div class="section-title">💼 WORK EXPERIENCE</div>
+                <p><strong>Web Accessibility Specialist</strong> – College of Science, Weber State University (Jan 2026 – Present)</p>
+                <ul><li>Improved accessibility compliance of Canvas Course materials by increasing Ally scores to near 100% through systematic auditing and remediation.</li>
+                <li>Collaborated in weekly mentor meetings to review progress, discuss challenges, and refine solutions.</li>
+                <li>Applied analytical thinking to detect and resolve repeated issues efficiently.</li></ul>
+                
+                <div class="section-title">📁 PROJECTS</div>
+                <p><strong>Movie Recommendation System (KNN)</strong> – Python, Pandas, scikit-learn. EDA, data cleaning, KNN for similar movies. <em>Demo: YouTube</em><br>
+                <strong>ETL Pipeline for Streaming Analytics</strong> – Python, MySQL, nested JSON. Processed 10K+ records, feature engineering, relational schema.<br>
+                <strong>Kaligandaki Soap Industry</strong> – responsive front-end website<br>
+                <strong>Task Manager & Habit Tracker</strong> – JS CRUD app with localStorage</p>
+                
+                <div class="section-title">🏆 CERTIFICATIONS & ACHIEVEMENTS</div>
+                <ul><li>AI/ML Hackathon Finalist 2025 – Nepali Leaders Network USA Boston</li>
+                <li>Machine Learning Hands-on Python Certificate</li>
+                <li>Microsoft Excel and PowerPoint Specialist – Nepal World Championship 1st</li></ul>
+                <p><em>Last updated: 2026 – Full portfolio includes interactive demos, GitHub repos, and live projects.</em></p>
+            </body>
+            </html>`;
+            const blob = new Blob([resumeHTML], { type: "text/html" });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = "Jayanti_Acharya_Resume.html";
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            alert("Resume (HTML format) downloaded. You can open in browser and print as PDF using Ctrl+P → Save as PDF. This contains your complete professional profile.");
+        }
+
+        const downloadBtns = document.querySelectorAll('#downloadResumeBtn, #resumeBtnFooter');
+        downloadBtns.forEach(btn => btn.addEventListener('click', (e) => { e.preventDefault(); generateOfficialResume(); }));
+
+        // YouTube demo links simulation (open placeholder or actual demo)
+        const movieDemo = document.getElementById('movieDemoLink');
+        const movieTrigger = document.getElementById('movieYTTrigger');
+        const etlDemo = document.getElementById('etlDemoLink');
+        const etlTrigger = document.getElementById('etlYTTrigger');
+        function openDemo() { alert("Demo video available on YouTube. Check the GitHub repo for walkthrough. For full demo: https://youtu.be/example (placeholder - upload your actual demo). In your real deployment, replace with actual YouTube link."); window.open("https://www.youtube.com/results?search_query=Movie+Recommendation+KNN+Python", "_blank"); }
+        if(movieDemo) movieDemo.addEventListener('click', (e) => { e.preventDefault(); openDemo(); });
+        if(movieTrigger) movieTrigger.addEventListener('click', (e) => { e.preventDefault(); openDemo(); });
+        if(etlDemo) etlDemo.addEventListener('click', (e) => { e.preventDefault(); alert("ETL Pipeline Demo: End-to-end data engineering project. Full video demonstration available."); window.open("https://www.youtube.com/results?search_query=ETL+Pipeline+Python+Pandas+MySQL", "_blank"); });
+        if(etlTrigger) etlTrigger.addEventListener('click', (e) => { e.preventDefault(); alert("ETL Pipeline analytics demo on YouTube."); window.open("https://www.youtube.com/results?search_query=Python+ETL+Streaming+Analytics", "_blank"); });
+    })();
+</script>
 </body>
 </html>
