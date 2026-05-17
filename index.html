@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Jayanti Acharya | Data Science & CS Portfolio</title>
+    <title>Jayanti Acharya | AI/ML & Data Science Portfolio</title>
     <!-- Bootstrap 5 + Icons + Google Fonts -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -194,6 +194,15 @@
             box-shadow: 0 2px 10px rgba(0,0,0,0.05);
             border-left: 5px solid #f39c12;
         }
+        .intern-badge {
+            background-color: #2ecc71;
+            color: white;
+            font-size: 0.7rem;
+            padding: 0.2rem 0.6rem;
+            border-radius: 20px;
+            display: inline-block;
+            margin-left: 10px;
+        }
         .contact-section {
             background-color: #0f2b3d;
             color: white;
@@ -211,6 +220,7 @@
             transition: 0.2s;
             color: white;
             font-size: 1.4rem;
+            text-decoration: none;
         }
         .social-icon-circle:hover {
             background-color: #f39c12;
@@ -231,6 +241,12 @@
         .youtube-btn:hover {
             background-color: #cc0000;
             color: white;
+        }
+        .tech-stack-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 0.8rem;
         }
         @media (max-width: 768px) {
             .hero h1 { font-size: 1.9rem; }
@@ -255,13 +271,13 @@
 <!-- Hero Section -->
 <section class="hero">
     <div class="container">
-        <div class="hero-badge"><i class="fas fa-chart-line me-1"></i> Data Science & ML Enthusiast | CS Student</div>
+        <div class="hero-badge"><i class="fas fa-robot me-1"></i> AI/ML Enthusiast | Aspiring AI Solutions Engineer</div>
         <h1>Jayanti Acharya</h1>
-        <p class="lead mt-2" style="max-width: 700px; margin-left: auto; margin-right: auto;">Machine Learning | ETL Pipelines | Data Analysis | Accessibility</p>
+        <p class="lead mt-2" style="max-width: 700px; margin-left: auto; margin-right: auto;">Machine Learning | LLMs & RAG | ETL Pipelines | Data Science</p>
         <div class="d-flex flex-wrap justify-content-center gap-3 mt-4">
             <a href="#" id="downloadResumeBtn" class="resume-btn"><i class="fas fa-file-pdf"></i> Download Resume (PDF)</a>
-            <a href="https://github.com/jjputah9" target="_blank" class="btn-outline-light-custom"><i class="fab fa-github"></i> GitHub</a>
-            <a href="https://linkedin.com/in/jayanti-acharya" target="_blank" class="btn-outline-light-custom"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            <a href="https://github.com/jayantiacharya" target="_blank" class="btn-outline-light-custom"><i class="fab fa-github"></i> GitHub</a>
+            <a href="https://www.linkedin.com/in/jayanti-acharya-4310711bb" target="_blank" class="btn-outline-light-custom"><i class="fab fa-linkedin"></i> LinkedIn</a>
         </div>
         <p class="mt-3 small opacity-75"><i class="fas fa-envelope"></i> jayantiacharya@mail.weber.edu | <i class="fas fa-phone-alt"></i> (801) 200-8780 | Ogden, UT</p>
     </div>
@@ -273,69 +289,108 @@
         <div class="col-lg-10">
             <div class="bg-white p-4 rounded-4 shadow-sm">
                 <h3 class="fw-semibold"><i class="fas fa-bullseye me-2 text-warning"></i> Objective</h3>
-                <p class="fs-5">Motivated Computer Science student with experience in <strong>machine learning, ETL pipelines, and data analysis</strong> seeking a Data Science Internship to apply programming, problem-solving, and analytical skills in a practical, real-world setting.</p>
+                <p class="fs-5">Motivated Computer Science student with experience in <strong>machine learning, ETL pipelines, and AI systems evaluation</strong> seeking opportunities to apply programming, analytical skills, and emerging AI technologies in real-world settings. Incoming <strong>AI Solutions Intern at Lender Toolkit</strong> (May 2026).</p>
                 <hr>
                 <div class="row mt-2">
-                    <div class="col-md-6"><i class="fas fa-graduation-cap text-primary"></i> <strong>BS Computer Science</strong> – Weber State (Aug 2026) • GPA 3.84</div>
-                    <div class="col-md-6"><i class="fas fa-trophy text-warning"></i> <strong>AAS High Honors</strong> – GPA 3.85 | AI/ML Hackathon Finalist 2025</div>
+                    <div class="col-md-4"><i class="fas fa-graduation-cap text-primary"></i> <strong>BS Computer Science</strong> – Weber State (Aug 2026) • GPA 3.84</div>
+                    <div class="col-md-4"><i class="fas fa-trophy text-warning"></i> <strong>AAS High Honors</strong> – GPA 3.85</div>
+                    <div class="col-md-4"><i class="fas fa-medal text-info"></i> <strong>AI/ML Hackathon Finalist</strong> 2025</div>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-<!-- PROJECTS Section with YOUR YouTube links -->
+<!-- PROJECTS Section -->
 <section id="projects" class="py-5">
     <div class="container">
-        <h2 class="section-title">Data Science & Engineering Projects</h2>
+        <h2 class="section-title">Data Science & Machine Learning Projects</h2>
         <div class="row g-4">
-            <!-- Movie Recommendation System (KNN) with YOUR YouTube link -->
+            <!-- Movie Recommendation System -->
             <div class="col-md-6 col-lg-6">
                 <div class="project-card">
                     <div class="project-img"><i class="fas fa-film fa-3x"></i></div>
                     <div class="project-content">
                         <h3 class="project-title">Movie Recommendation System (KNN)</h3>
                         <p class="text-muted small">Python · Pandas · scikit-learn · EDA</p>
-                        <p>Performed exploratory data analysis (EDA) on movie dataset to understand distributions, trends, and data quality. Cleaned and preprocessed data by handling missing values and transforming features. Built a recommendation system using <strong>K-Nearest Neighbors (KNN)</strong> to identify similar movies based on user preferences.</p>
+                        <p>Performed exploratory data analysis (EDA) on movie dataset to understand distributions, trends, and data quality. Cleaned and preprocessed data by handling missing values and transforming features. Built a recommendation system using <strong>K-Nearest Neighbors (KNN)</strong> to identify similar movies.</p>
                         <div class="mb-2">
-                            <span class="tech-badge">Python</span><span class="tech-badge">Pandas/NumPy</span><span class="tech-badge">scikit-learn</span><span class="tech-badge">KNN</span><span class="tech-badge">EDA</span>
+                            <span class="tech-badge">Python</span><span class="tech-badge">Pandas/NumPy</span><span class="tech-badge">scikit-learn</span><span class="tech-badge">KNN</span>
                         </div>
                         <div class="mt-auto d-flex gap-2 flex-wrap">
-                            <a href="https://github.com/jjputah9/movie-recommender-knn" target="_blank" class="btn-link-custom"><i class="fab fa-github"></i> GitHub Repo</a>
+                            <a href="https://github.com/jayantiacharya/MLMovieRecommendationSystem" target="_blank" class="btn-link-custom"><i class="fab fa-github"></i> GitHub Repo</a>
                             <a href="https://www.youtube.com/watch?v=f3U--m8XQSA" target="_blank" class="btn-link-custom youtube-btn"><i class="fab fa-youtube"></i> Watch Demo</a>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- ETL Pipeline for Streaming Analytics with YOUR YouTube link -->
+            <!-- ML Price Prediction -->
             <div class="col-md-6 col-lg-6">
                 <div class="project-card">
-                    <div class="project-img"><i class="fas fa-stream fa-3x"></i></div>
+                    <div class="project-img"><i class="fas fa-chart-line fa-3x"></i></div>
                     <div class="project-content">
-                        <h3 class="project-title">ETL Pipeline: Streaming Analytics</h3>
-                        <p class="text-muted small">Python · Pandas · MySQL · JSON parsing</p>
-                        <p>Built an end-to-end ETL pipeline processing 10K+ raw records including EDA, data cleaning (missing values, duplicates, validation), and transformation. Parsed nested JSON with error handling, engineered features (watch time, user behavior). Designed ER diagram and relational schema, loading 8.6K+ cleaned records into MySQL with normalized tables.</p>
+                        <h3 class="project-title">ML Price Prediction System</h3>
+                        <p class="text-muted small">Python · Scikit-learn · Regression · Feature Engineering</p>
+                        <p>Built a machine learning model for price prediction using regression algorithms. Performed feature engineering, data normalization, and model evaluation. Achieved high accuracy through hyperparameter tuning and cross-validation.</p>
                         <div class="mb-2">
-                            <span class="tech-badge">Python/Pandas</span><span class="tech-badge">ETL Pipelines</span><span class="tech-badge">MySQL</span><span class="tech-badge">Data Cleaning</span>
+                            <span class="tech-badge">Python</span><span class="tech-badge">Scikit-learn</span><span class="tech-badge">Regression</span><span class="tech-badge">Feature Engineering</span>
                         </div>
-                        <div class="mt-auto d-flex gap-2 flex-wrap">
-                            <a href="https://github.com/jjputah9/etl-streaming-analytics" target="_blank" class="btn-link-custom"><i class="fab fa-github"></i> GitHub Repo</a>
-                            <a href="https://www.youtube.com/watch?v=f-pO65OhuSQ" target="_blank" class="btn-link-custom youtube-btn"><i class="fab fa-youtube"></i> Watch Demo</a>
+                        <div class="mt-auto">
+                            <a href="https://github.com/jayantiacharya/Ml-PricePrediction" target="_blank" class="btn-link-custom"><i class="fab fa-github"></i> GitHub Repo</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         
-        <!-- Additional Web Dev Projects -->
-        <h3 class="mt-5 mb-3 fw-semibold">Web Development & Accessibility Projects</h3>
+        <!-- ETL Pipeline Project -->
+        <div class="row g-4 mt-2">
+            <div class="col-md-6 col-lg-6">
+                <div class="project-card">
+                    <div class="project-img"><i class="fas fa-stream fa-3x"></i></div>
+                    <div class="project-content">
+                        <h3 class="project-title">ETL Pipeline: Streaming Analytics</h3>
+                        <p class="text-muted small">Python · Pandas · MySQL · JSON parsing</p>
+                        <p>Built an end-to-end ETL pipeline processing 10K+ raw records including EDA, data cleaning, and transformation. Parsed nested JSON with error handling, engineered features for analysis. Designed ER diagram and relational schema, loading 8.6K+ cleaned records into MySQL.</p>
+                        <div class="mb-2">
+                            <span class="tech-badge">Python/Pandas</span><span class="tech-badge">ETL Pipelines</span><span class="tech-badge">MySQL</span><span class="tech-badge">Data Cleaning</span>
+                        </div>
+                        <div class="mt-auto d-flex gap-2 flex-wrap">
+                            <a href="https://github.com/jayantiacharya/etl-streaming-analytics" target="_blank" class="btn-link-custom"><i class="fab fa-github"></i> GitHub Repo</a>
+                            <a href="https://www.youtube.com/watch?v=f-pO65OhuSQ" target="_blank" class="btn-link-custom youtube-btn"><i class="fab fa-youtube"></i> Watch Demo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Web Accessibility Project -->
+            <div class="col-md-6 col-lg-6">
+                <div class="project-card">
+                    <div class="project-img"><i class="fas fa-universal-access fa-3x"></i></div>
+                    <div class="project-content">
+                        <h3 class="project-title">Canvas Accessibility Auditor</h3>
+                        <p class="text-muted small">WCAG · ARIA · PDF/UA · Accessibility Remediation</p>
+                        <p>Accessibility remediation tool and guidelines for LMS platforms, collaborating with Disability Services. Improved Ally scores to near 100% through systematic auditing and remediation of Canvas course materials.</p>
+                        <div class="mb-2">
+                            <span class="tech-badge">WCAG 2.1</span><span class="tech-badge">ARIA</span><span class="tech-badge">PDF/UA</span>
+                        </div>
+                        <div class="mt-auto">
+                            <a href="https://github.com/jayantiacharya/a11y-canvas-audit" target="_blank" class="btn-link-custom"><i class="fab fa-github"></i> Research Repo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Web Dev Projects -->
+        <h3 class="mt-5 mb-3 fw-semibold">Web Development Projects</h3>
         <div class="row g-4">
             <div class="col-md-6 col-lg-4">
                 <div class="project-card">
                     <div class="project-img"><i class="fas fa-soap"></i></div>
                     <div class="project-content">
                         <h3 class="project-title">Kaligandaki Soap Industry</h3>
-                        <p>Responsive multi-page website for handmade soap company with interactive features, product gallery, and contact form.</p>
+                        <p>Responsive multi-page website for handmade soap company with interactive features and contact form.</p>
                         <div><span class="tech-badge">HTML5/CSS3</span><span class="tech-badge">Bootstrap</span><span class="tech-badge">JavaScript</span></div>
                         <div class="mt-3"><a href="https://kgsoapindustrywebsite.netlify.app" target="_blank" class="btn-link-custom"><i class="fas fa-external-link-alt"></i> Live Demo</a></div>
                     </div>
@@ -348,18 +403,18 @@
                         <h3 class="project-title">Task Manager & Habit Tracker</h3>
                         <p>Interactive web app with CRUD operations, localStorage persistence, and accessible keyboard navigation.</p>
                         <div><span class="tech-badge">JavaScript</span><span class="tech-badge">localStorage</span><span class="tech-badge">CSS Grid</span></div>
-                        <div class="mt-3"><a href="https://github.com/jjputah9/task-habit-tracker" target="_blank" class="btn-link-custom"><i class="fab fa-github"></i> Source Code</a></div>
+                        <div class="mt-3"><a href="https://github.com/jayantiacharya/task-habit-tracker" target="_blank" class="btn-link-custom"><i class="fab fa-github"></i> Source Code</a></div>
                     </div>
                 </div>
             </div>
             <div class="col-md-6 col-lg-4">
                 <div class="project-card">
-                    <div class="project-img"><i class="fas fa-universal-access"></i></div>
+                    <div class="project-img"><i class="fas fa-graduation-cap"></i></div>
                     <div class="project-content">
-                        <h3 class="project-title">Canvas Accessibility Auditor</h3>
-                        <p>Accessibility remediation tool and guidelines for LMS platforms, collaborating with Disability Services.</p>
-                        <div><span class="tech-badge">WCAG 2.1</span><span class="tech-badge">ARIA</span><span class="tech-badge">PDF/UA</span></div>
-                        <div class="mt-3"><a href="https://github.com/jjputah9/a11y-canvas-audit" target="_blank" class="btn-link-custom"><i class="fab fa-github"></i> Research Repo</a></div>
+                        <h3 class="project-title">Learning Management System</h3>
+                        <p>Full-stack LMS built with a team of 7 students using Agile methodology.</p>
+                        <div><span class="tech-badge">ASP.NET Core</span><span class="tech-badge">C#</span><span class="tech-badge">SQL Server</span></div>
+                        <div class="mt-3"><a href="https://github.com/jayantiacharya/CS3750_Group_2_LMS" target="_blank" class="btn-link-custom"><i class="fab fa-github"></i> GitHub</a></div>
                     </div>
                 </div>
             </div>
@@ -367,21 +422,41 @@
     </div>
 </section>
 
-<!-- WORK EXPERIENCE Section -->
+<!-- WORK EXPERIENCE Section - Updated with Lender Toolkit Internship -->
 <section id="experience" class="py-5 bg-light">
     <div class="container">
         <h2 class="section-title">Work Experience & Achievements</h2>
         <div class="row">
             <div class="col-lg-7">
+                <!-- NEW: Lender Toolkit Internship -->
+                <div class="work-card">
+                    <h4><i class="fas fa-robot text-warning me-2"></i> AI Solutions Intern <span class="intern-badge">May 2026 - Aug 2026</span></h4>
+                    <p class="text-muted fw-bold">Lender Toolkit | Mortgage Technology · Remote</p>
+                    <p><em>Ranked #3194 on INC. 5000 | Elite Pro Consulting Partner with ICE Mortgage Technology</em></p>
+                    <ul>
+                        <li>Testing and evaluating AI-powered tools built on frameworks such as LangChain, RAG (Retrieval-Augmented Generation), and agent-based systems for mortgage workflows</li>
+                        <li>Systematically reviewing AI-generated outputs for factual accuracy, logical consistency, and alignment with mortgage domain standards (underwriting, income analysis, document processing)</li>
+                        <li>Assisting with migration from SDK-based implementations to API-driven architectures; observing AI model integration into internal tools</li>
+                        <li>Collaborating with engineering and product teams to apply AI to mortgage processes using tools like Claude Code, Devin.ai, BugBot, and Copilot</li>
+                        <li>Researching emerging AI trends (LLMs, agents, orchestration tools) and documenting findings for team use</li>
+                    </ul>
+                    <div class="tech-stack-list">
+                        <span class="tech-badge">Python</span><span class="tech-badge">C#/.NET</span><span class="tech-badge">FastAPI</span>
+                        <span class="tech-badge">LangChain/RAG</span><span class="tech-badge">LLMs</span><span class="tech-badge">AWS</span>
+                        <span class="tech-badge">Claude/Copilot</span><span class="tech-badge">SQL/PostgreSQL</span>
+                    </div>
+                </div>
+                
                 <div class="work-card">
                     <h4><i class="fas fa-universal-access text-warning me-2"></i> Web Accessibility Specialist</h4>
                     <p class="text-muted">College of Science, Weber State University | Jan 2026 – Present</p>
-                    <ul class="mb-0">
-                        <li>Improved accessibility compliance of Canvas Course materials by increasing Ally scores to near 100% through systematic auditing and remediation.</li>
-                        <li>Collaborated in weekly mentor meetings to review progress, discuss challenges, and refine solutions.</li>
-                        <li>Applied analytical thinking to detect and resolve repeated issues efficiently, ensuring inclusive learning.</li>
+                    <ul>
+                        <li>Improved accessibility compliance of Canvas Course materials by increasing Ally scores to near 100% through systematic auditing and remediation</li>
+                        <li>Collaborated in weekly mentor meetings to review progress, discuss challenges, and refine solutions</li>
+                        <li>Applied analytical thinking to detect and resolve repeated issues efficiently, ensuring inclusive learning</li>
                     </ul>
                 </div>
+                
                 <div class="work-card mt-3">
                     <h4><i class="fas fa-award text-warning me-2"></i> Certifications & Honors</h4>
                     <ul>
@@ -395,10 +470,13 @@
             <div class="col-lg-5">
                 <div class="skill-category h-100">
                     <h4><i class="fas fa-database"></i> Core Competencies</h4>
-                    <div><span class="tech-badge">Python</span> <span class="tech-badge">SQL</span> <span class="tech-badge">Java/C++</span></div>
-                    <div><span class="tech-badge">Pandas/NumPy</span> <span class="tech-badge">Matplotlib</span> <span class="tech-badge">scikit-learn</span></div>
+                    <div><span class="tech-badge">Python</span> <span class="tech-badge">SQL</span> <span class="tech-badge">Java/C#</span> <span class="tech-badge">TypeScript</span></div>
+                    <div><span class="tech-badge">Pandas/NumPy</span> <span class="tech-badge">scikit-learn</span> <span class="tech-badge">LangChain</span> <span class="tech-badge">RAG</span></div>
                     <div><span class="tech-badge">ETL Pipelines</span> <span class="tech-badge">Data Cleaning</span> <span class="tech-badge">EDA</span></div>
-                    <div><span class="tech-badge">KNN</span> <span class="tech-badge">Data Transformation</span></div>
+                    <div><span class="tech-badge">KNN/Regression</span> <span class="tech-badge">LLM Evaluation</span> <span class="tech-badge">API Integration</span></div>
+                    <hr>
+                    <h4><i class="fas fa-cloud"></i> Cloud & DevOps</h4>
+                    <div><span class="tech-badge">AWS (ECR/ECS)</span> <span class="tech-badge">CI/CD</span> <span class="tech-badge">CloudFront</span></div>
                     <hr>
                     <h4><i class="fas fa-chalkboard-user"></i> Soft Skills</h4>
                     <div><span class="tech-badge">Collaboration</span> <span class="tech-badge">Presentation Skills</span> <span class="tech-badge">Attention to Detail</span> <span class="tech-badge">Problem Solving</span></div>
@@ -408,7 +486,7 @@
     </div>
 </section>
 
-<!-- SKILLS Section -->
+<!-- SKILLS Section - Updated with AI/ML Stack -->
 <section id="skills" class="skills-section">
     <div class="container">
         <h2 class="section-title">Technical Skills</h2>
@@ -416,19 +494,23 @@
             <div class="col-md-4">
                 <div class="skill-category">
                     <h4><i class="fas fa-code"></i> Languages</h4>
-                    <div><span class="tech-badge">Python</span> <span class="tech-badge">SQL</span> <span class="tech-badge">Java</span> <span class="tech-badge">C++</span> <span class="tech-badge">HTML/CSS/JS</span></div>
+                    <div><span class="tech-badge">Python</span> <span class="tech-badge">SQL/PL-SQL</span> <span class="tech-badge">C#</span> <span class="tech-badge">Java</span> <span class="tech-badge">TypeScript</span> <span class="tech-badge">JavaScript</span> <span class="tech-badge">VB</span></div>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="skill-category">
-                    <h4><i class="fas fa-chart-simple"></i> Data & ML</h4>
-                    <div><span class="tech-badge">Pandas/NumPy</span> <span class="tech-badge">Matplotlib</span> <span class="tech-badge">scikit-learn</span> <span class="tech-badge">ETL Pipelines</span> <span class="tech-badge">EDA</span> <span class="tech-badge">KNN</span></div>
+                    <h4><i class="fas fa-chart-simple"></i> Data & ML / AI</h4>
+                    <div><span class="tech-badge">Pandas/NumPy</span> <span class="tech-badge">scikit-learn</span> <span class="tech-badge">LangChain</span> <span class="tech-badge">RAG</span></div>
+                    <div><span class="tech-badge">LLM Evaluation</span> <span class="tech-badge">ETL Pipelines</span> <span class="tech-badge">EDA</span></div>
+                    <div><span class="tech-badge">KNN/Regression</span> <span class="tech-badge">Feature Engineering</span></div>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="skill-category">
-                    <h4><i class="fas fa-tools"></i> Tools & Databases</h4>
-                    <div><span class="tech-badge">MySQL</span> <span class="tech-badge">Git/GitHub</span> <span class="tech-badge">Netlify</span> <span class="tech-badge">VS Code</span> <span class="tech-badge">Jupyter</span></div>
+                    <h4><i class="fas fa-tools"></i> Frameworks & Tools</h4>
+                    <div><span class="tech-badge">.NET/ASP.NET</span> <span class="tech-badge">FastAPI</span> <span class="tech-badge">React/Next.js</span></div>
+                    <div><span class="tech-badge">Node.js/NestJS</span> <span class="tech-badge">MySQL/PostgreSQL</span> <span class="tech-badge">MongoDB</span></div>
+                    <div><span class="tech-badge">AWS (ECR/ECS)</span> <span class="tech-badge">Git/GitHub</span> <span class="tech-badge">Docker/CI/CD</span></div>
                 </div>
             </div>
         </div>
@@ -439,12 +521,12 @@
 <section id="contact" class="contact-section">
     <div class="container">
         <h2 class="mb-3" style="color: white;">Let's Connect</h2>
-        <p>Actively seeking Data Science Internship opportunities for Summer/Fall 2026.</p>
+        <p>Incoming AI Solutions Intern @ Lender Toolkit (May 2026) | Open to AI/ML opportunities</p>
         <div class="contact-info d-flex flex-wrap justify-content-center gap-3 my-4">
             <a href="mailto:jayantiacharya@mail.weber.edu" class="social-icon-circle"><i class="fas fa-envelope"></i></a>
             <a href="tel:8012008780" class="social-icon-circle"><i class="fas fa-phone-alt"></i></a>
-            <a href="https://github.com/jjputah9" target="_blank" class="social-icon-circle"><i class="fab fa-github"></i></a>
-            <a href="https://linkedin.com/in/jayanti-acharya" target="_blank" class="social-icon-circle"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://github.com/jayantiacharya" target="_blank" class="social-icon-circle"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/jayanti-acharya-4310711bb" target="_blank" class="social-icon-circle"><i class="fab fa-linkedin-in"></i></a>
         </div>
         <div class="row justify-content-center mt-2">
             <div class="col-auto">
@@ -457,81 +539,62 @@
 
 <footer class="footer">
     <div class="container">
-        <p>&copy; 2026 Jayanti Acharya — Data Science & Computer Science Portfolio. GitHub, LinkedIn, and live demos available above.</p>
-        <p class="small"><i class="fab fa-github"></i> github.com/jjputah9 | <i class="fab fa-linkedin"></i> linkedin.com/in/jayanti-acharya</p>
+        <p>&copy; 2026 Jayanti Acharya — AI/ML & Data Science Portfolio. Incoming AI Solutions Intern @ Lender Toolkit.</p>
+        <p class="small"><i class="fab fa-github"></i> github.com/jayantiacharya | <i class="fab fa-linkedin"></i> linkedin.com/in/jayanti-acharya-4310711bb</p>
     </div>
 </footer>
 
 <script>
     (function() {
-        // Generate downloadable resume PDF based on your actual resume content
         function generateOfficialResume() {
             const resumeHTML = `
             <!DOCTYPE html>
             <html>
-            <head>
-                <meta charset="UTF-8">
-                <title>Jayanti_Acharya_Resume_DataScience</title>
-                <style>
-                    body { font-family: 'Segoe UI', Arial, sans-serif; margin: 2rem; line-height: 1.4; max-width: 900px; margin: auto; color: #1a2c3e; }
-                    h1 { color: #0f2b3d; border-bottom: 3px solid #f39c12; display: inline-block; }
-                    .header-contact { background: #f8fafc; padding: 10px; border-radius: 12px; margin: 15px 0; }
-                    .section-title { background: #eef2fa; padding: 5px 12px; border-radius: 20px; font-weight: bold; margin-top: 20px; }
-                    .job-title { font-weight: bold; color: #1e5a7d; }
-                    ul { margin-top: 4px; }
-                </style>
+            <head><meta charset="UTF-8"><title>Jayanti_Acharya_Resume_2026</title>
+            <style>
+                body { font-family: 'Segoe UI', Arial, sans-serif; margin: 2rem; line-height: 1.4; max-width: 900px; margin: auto; }
+                h1 { color: #0f2b3d; border-bottom: 3px solid #f39c12; }
+                .header-contact { background: #f8fafc; padding: 10px; border-radius: 12px; margin: 15px 0; }
+                .section-title { background: #eef2fa; padding: 5px 12px; border-radius: 20px; font-weight: bold; margin-top: 20px; }
+            </style>
             </head>
             <body>
                 <h1>Jayanti Acharya</h1>
-                <div class="header-contact">
-                    📧 jayantiacharya@mail.weber.edu &nbsp;|&nbsp; 📞 (801) 200-8780 &nbsp;|&nbsp; 🔗 linkedin.com/in/jayanti-acharya &nbsp;|&nbsp; 💻 github.com/jjputah9
-                </div>
-                <p><strong>Motivated Computer Science student</strong> with experience in machine learning, ETL pipelines, and data analysis seeking a <strong>Data Science Internship</strong> to apply programming, problem-solving, and analytical skills in a practical, real-world setting.</p>
+                <div class="header-contact">📧 jayantiacharya@mail.weber.edu | 📞 (801) 200-8780 | 🔗 linkedin.com/in/jayanti-acharya-4310711bb | 💻 github.com/jayantiacharya</div>
+                <p><strong>Motivated Computer Science student</strong> with experience in machine learning, ETL pipelines, and AI systems. Incoming <strong>AI Solutions Intern at Lender Toolkit</strong> (May 2026).</p>
                 
                 <div class="section-title">🎓 EDUCATION</div>
-                <p><strong>BS COMPUTER SCIENCE</strong> - Weber State University, Ogden UT - GPA 3.84 (August 2026)<br>
-                <strong>AAS</strong> - Weber State University, Ogden UT - GPA 3.85 | High Honors (April 2025)<br>
-                <strong>Relevant Coursework:</strong> CS 5580 (Data Science Algorithms) A, Math 1040 (Statistics) A</p>
-                
-                <div class="section-title">🛠️ SKILLS</div>
-                <p><strong>Languages:</strong> Python, SQL, Java, C++<br>
-                <strong>Libraries:</strong> Pandas, NumPy, Matplotlib, scikit-learn<br>
-                <strong>Data & ML:</strong> ETL Pipelines, Data Cleaning, Data Transformation, EDA, KNN<br>
-                <strong>Soft Skills:</strong> Collaborative, Presentation Skills, Attention to Detail, Problem Solving</p>
+                <p><strong>BS COMPUTER SCIENCE</strong> - Weber State University, GPA 3.84 (Aug 2026)<br>
+                <strong>AAS</strong> - Weber State University, GPA 3.85 | High Honors (April 2025)</p>
                 
                 <div class="section-title">💼 WORK EXPERIENCE</div>
-                <p><strong>Web Accessibility Specialist</strong> – College of Science, Weber State University (Jan 2026 – Present)</p>
-                <ul><li>Improved accessibility compliance of Canvas Course materials by increasing Ally scores to near 100% through systematic auditing and remediation.</li>
-                <li>Collaborated in weekly mentor meetings to review progress, discuss challenges, and refine solutions.</li>
-                <li>Applied analytical thinking to detect and resolve repeated issues efficiently.</li></ul>
+                <p><strong>AI Solutions Intern</strong> – Lender Toolkit (May 2026 – Aug 2026)<br>
+                Testing AI tools (LangChain/RAG), evaluating LLM outputs for mortgage workflows, API migration support.</p>
+                <p><strong>Web Accessibility Specialist</strong> – Weber State University (Jan 2026 – Present)<br>Improved Ally scores to near 100%, auditing Canvas materials.</p>
                 
                 <div class="section-title">📁 PROJECTS</div>
-                <p><strong>Movie Recommendation System (KNN)</strong> – Python, Pandas, scikit-learn. EDA, data cleaning, KNN for similar movies. <em>Demo: https://www.youtube.com/watch?v=f3U--m8XQSA</em><br>
-                <strong>ETL Pipeline for Streaming Analytics</strong> – Python, MySQL, nested JSON. Processed 10K+ records, feature engineering, relational schema. <em>Demo: https://www.youtube.com/watch?v=f-pO65OhuSQ</em><br>
-                <strong>Kaligandaki Soap Industry</strong> – responsive front-end website<br>
-                <strong>Task Manager & Habit Tracker</strong> – JS CRUD app with localStorage</p>
+                <p><strong>Movie Recommendation (KNN)</strong> – Python, scikit-learn<br>
+                <strong>ML Price Prediction</strong> – Regression, feature engineering<br>
+                <strong>ETL Pipeline</strong> – Python, MySQL, 10K+ records<br>
+                <strong>Web Dev:</strong> Kaligandaki Soap Industry, Task Manager, LMS</p>
                 
-                <div class="section-title">🏆 CERTIFICATIONS & ACHIEVEMENTS</div>
-                <ul><li>AI/ML Hackathon Finalist 2025 – Nepali Leaders Network USA Boston</li>
-                <li>Machine Learning Hands-on Python Certificate</li>
-                <li>Microsoft Excel and PowerPoint Specialist – Nepal World Championship 1st</li></ul>
-                <p><em>Last updated: 2026 – Full portfolio includes interactive demos, GitHub repos, and live projects.</em></p>
+                <div class="section-title">🏆 CERTIFICATIONS</div>
+                <ul><li>AI/ML Hackathon Finalist 2025</li><li>Machine Learning Hands-on Python</li><li>Microsoft Excel/PowerPoint Champion</li></ul>
+                <p><em>Updated: 2026</em></p>
             </body>
             </html>`;
             const blob = new Blob([resumeHTML], { type: "text/html" });
-            const url = URL.createObjectURL(blob);
             const a = document.createElement('a');
-            a.href = url;
+            a.href = URL.createObjectURL(blob);
             a.download = "Jayanti_Acharya_Resume.html";
             document.body.appendChild(a);
             a.click();
             document.body.removeChild(a);
-            URL.revokeObjectURL(url);
-            alert("Resume downloaded! Open in browser and use Ctrl+P to save as PDF.");
+            alert("Resume downloaded! Open in browser and print as PDF (Ctrl+P).");
         }
-
-        const downloadBtns = document.querySelectorAll('#downloadResumeBtn, #resumeBtnFooter');
-        downloadBtns.forEach(btn => btn.addEventListener('click', (e) => { e.preventDefault(); generateOfficialResume(); }));
+        document.querySelectorAll('#downloadResumeBtn, #resumeBtnFooter').forEach(btn => 
+            btn.addEventListener('click', (e) => { e.preventDefault(); generateOfficialResume(); })
+        );
     })();
 </script>
 </body>
