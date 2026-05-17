@@ -72,13 +72,21 @@
             border-color: #f39c12;
             color: #1e2a3e;
         }
-        .btn-primary-custom {
+        .resume-btn {
             background-color: #f39c12;
-            border: none;
             color: #1e2a3e;
-            font-weight: 600;
-            padding: 0.6rem 1.6rem;
             border-radius: 40px;
+            padding: 0.7rem 1.8rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            transition: 0.2s;
+        }
+        .resume-btn:hover {
+            background-color: #e67e22;
+            color: white;
         }
         .section-title {
             text-align: center;
@@ -178,21 +186,13 @@
             font-weight: 700;
             margin-bottom: 1.2rem;
         }
-        .resume-btn {
-            background-color: #f39c12;
-            color: #1e2a3e;
-            border-radius: 40px;
-            padding: 0.7rem 1.8rem;
-            font-weight: 600;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            transition: 0.2s;
-        }
-        .resume-btn:hover {
-            background-color: #e67e22;
-            color: white;
+        .work-card {
+            background: white;
+            border-radius: 20px;
+            padding: 1.4rem;
+            margin-bottom: 1.2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 5px solid #f39c12;
         }
         .contact-section {
             background-color: #0f2b3d;
@@ -224,24 +224,18 @@
             padding: 1.3rem;
             font-size: 0.8rem;
         }
+        .youtube-btn {
+            background-color: #ff0000;
+            color: white;
+        }
+        .youtube-btn:hover {
+            background-color: #cc0000;
+            color: white;
+        }
         @media (max-width: 768px) {
             .hero h1 { font-size: 1.9rem; }
             .section-title { font-size: 1.7rem; }
         }
-        .work-card {
-            background: white;
-            border-radius: 20px;
-            padding: 1.4rem;
-            margin-bottom: 1.2rem;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            border-left: 5px solid #f39c12;
-        }
-        .demo-link {
-            color: #f39c12;
-            font-weight: 500;
-            text-decoration: none;
-        }
-        .demo-link:hover { text-decoration: underline; }
     </style>
 </head>
 <body>
@@ -258,7 +252,7 @@
     </div>
 </nav>
 
-<!-- Hero Section with resume download & contact -->
+<!-- Hero Section -->
 <section class="hero">
     <div class="container">
         <div class="hero-badge"><i class="fas fa-chart-line me-1"></i> Data Science & ML Enthusiast | CS Student</div>
@@ -273,7 +267,7 @@
     </div>
 </section>
 
-<!-- Professional Summary / Context -->
+<!-- Professional Summary -->
 <div class="container py-4">
     <div class="row justify-content-center">
         <div class="col-lg-10">
@@ -290,50 +284,50 @@
     </div>
 </div>
 
-<!-- PROJECTS Section (Data Science focus: Movie Rec Sys + ETL Pipeline, plus web dev) -->
+<!-- PROJECTS Section with YOUR YouTube links -->
 <section id="projects" class="py-5">
     <div class="container">
         <h2 class="section-title">Data Science & Engineering Projects</h2>
         <div class="row g-4">
-            <!-- Movie Recommendation System (KNN) -->
+            <!-- Movie Recommendation System (KNN) with YOUR YouTube link -->
             <div class="col-md-6 col-lg-6">
                 <div class="project-card">
                     <div class="project-img"><i class="fas fa-film fa-3x"></i></div>
                     <div class="project-content">
                         <h3 class="project-title">Movie Recommendation System (KNN)</h3>
-                        <p class="text-muted small">Python · Pandas · scikit-learn · EDA | <a href="#" class="demo-link" id="movieDemoLink"><i class="fab fa-youtube"></i> Demo: YouTube</a></p>
+                        <p class="text-muted small">Python · Pandas · scikit-learn · EDA</p>
                         <p>Performed exploratory data analysis (EDA) on movie dataset to understand distributions, trends, and data quality. Cleaned and preprocessed data by handling missing values and transforming features. Built a recommendation system using <strong>K-Nearest Neighbors (KNN)</strong> to identify similar movies based on user preferences.</p>
                         <div class="mb-2">
                             <span class="tech-badge">Python</span><span class="tech-badge">Pandas/NumPy</span><span class="tech-badge">scikit-learn</span><span class="tech-badge">KNN</span><span class="tech-badge">EDA</span>
                         </div>
                         <div class="mt-auto d-flex gap-2 flex-wrap">
                             <a href="https://github.com/jjputah9/movie-recommender-knn" target="_blank" class="btn-link-custom"><i class="fab fa-github"></i> GitHub Repo</a>
-                            <a href="#" id="movieYTTrigger" class="btn-link-custom"><i class="fab fa-youtube"></i> Watch Demo</a>
+                            <a href="https://www.youtube.com/watch?v=f3U--m8XQSA" target="_blank" class="btn-link-custom youtube-btn"><i class="fab fa-youtube"></i> Watch Demo</a>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- ETL Pipeline for Streaming Analytics -->
+            <!-- ETL Pipeline for Streaming Analytics with YOUR YouTube link -->
             <div class="col-md-6 col-lg-6">
                 <div class="project-card">
                     <div class="project-img"><i class="fas fa-stream fa-3x"></i></div>
                     <div class="project-content">
                         <h3 class="project-title">ETL Pipeline: Streaming Analytics</h3>
-                        <p class="text-muted small">Python · Pandas · MySQL · JSON parsing | <a href="#" class="demo-link" id="etlDemoLink"><i class="fab fa-youtube"></i> Demo: YouTube</a></p>
+                        <p class="text-muted small">Python · Pandas · MySQL · JSON parsing</p>
                         <p>Built an end-to-end ETL pipeline processing 10K+ raw records including EDA, data cleaning (missing values, duplicates, validation), and transformation. Parsed nested JSON with error handling, engineered features (watch time, user behavior). Designed ER diagram and relational schema, loading 8.6K+ cleaned records into MySQL with normalized tables.</p>
                         <div class="mb-2">
                             <span class="tech-badge">Python/Pandas</span><span class="tech-badge">ETL Pipelines</span><span class="tech-badge">MySQL</span><span class="tech-badge">Data Cleaning</span>
                         </div>
-                        <div class="mt-auto d-flex gap-2">
+                        <div class="mt-auto d-flex gap-2 flex-wrap">
                             <a href="https://github.com/jjputah9/etl-streaming-analytics" target="_blank" class="btn-link-custom"><i class="fab fa-github"></i> GitHub Repo</a>
-                            <a href="#" id="etlYTTrigger" class="btn-link-custom"><i class="fab fa-youtube"></i> Demo Video</a>
+                            <a href="https://www.youtube.com/watch?v=f-pO65OhuSQ" target="_blank" class="btn-link-custom youtube-btn"><i class="fab fa-youtube"></i> Watch Demo</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         
-        <!-- Additional Web Dev / Accessibility projects (showcasing breadth) -->
+        <!-- Additional Web Dev Projects -->
         <h3 class="mt-5 mb-3 fw-semibold">Web Development & Accessibility Projects</h3>
         <div class="row g-4">
             <div class="col-md-6 col-lg-4">
@@ -373,7 +367,7 @@
     </div>
 </section>
 
-<!-- WORK EXPERIENCE Section (Web Accessibility Specialist) + Certifications -->
+<!-- WORK EXPERIENCE Section -->
 <section id="experience" class="py-5 bg-light">
     <div class="container">
         <h2 class="section-title">Work Experience & Achievements</h2>
@@ -414,7 +408,7 @@
     </div>
 </section>
 
-<!-- SKILLS Section (detailed) -->
+<!-- SKILLS Section -->
 <section id="skills" class="skills-section">
     <div class="container">
         <h2 class="section-title">Technical Skills</h2>
@@ -441,10 +435,10 @@
     </div>
 </section>
 
-<!-- Contact & Resume (actual downloadable PDF) -->
+<!-- Contact Section -->
 <section id="contact" class="contact-section">
     <div class="container">
-        <h2 class="mb-3" style="color: white;">Let’s Connect</h2>
+        <h2 class="mb-3" style="color: white;">Let's Connect</h2>
         <p>Actively seeking Data Science Internship opportunities for Summer/Fall 2026.</p>
         <div class="contact-info d-flex flex-wrap justify-content-center gap-3 my-4">
             <a href="mailto:jayantiacharya@mail.weber.edu" class="social-icon-circle"><i class="fas fa-envelope"></i></a>
@@ -470,7 +464,7 @@
 
 <script>
     (function() {
-        // Generate downloadable resume PDF based on actual provided resume content
+        // Generate downloadable resume PDF based on your actual resume content
         function generateOfficialResume() {
             const resumeHTML = `
             <!DOCTYPE html>
@@ -512,8 +506,8 @@
                 <li>Applied analytical thinking to detect and resolve repeated issues efficiently.</li></ul>
                 
                 <div class="section-title">📁 PROJECTS</div>
-                <p><strong>Movie Recommendation System (KNN)</strong> – Python, Pandas, scikit-learn. EDA, data cleaning, KNN for similar movies. <em>Demo: YouTube</em><br>
-                <strong>ETL Pipeline for Streaming Analytics</strong> – Python, MySQL, nested JSON. Processed 10K+ records, feature engineering, relational schema.<br>
+                <p><strong>Movie Recommendation System (KNN)</strong> – Python, Pandas, scikit-learn. EDA, data cleaning, KNN for similar movies. <em>Demo: https://www.youtube.com/watch?v=f3U--m8XQSA</em><br>
+                <strong>ETL Pipeline for Streaming Analytics</strong> – Python, MySQL, nested JSON. Processed 10K+ records, feature engineering, relational schema. <em>Demo: https://www.youtube.com/watch?v=f-pO65OhuSQ</em><br>
                 <strong>Kaligandaki Soap Industry</strong> – responsive front-end website<br>
                 <strong>Task Manager & Habit Tracker</strong> – JS CRUD app with localStorage</p>
                 
@@ -533,22 +527,11 @@
             a.click();
             document.body.removeChild(a);
             URL.revokeObjectURL(url);
-            alert("Resume (HTML format) downloaded. You can open in browser and print as PDF using Ctrl+P → Save as PDF. This contains your complete professional profile.");
+            alert("Resume downloaded! Open in browser and use Ctrl+P to save as PDF.");
         }
 
         const downloadBtns = document.querySelectorAll('#downloadResumeBtn, #resumeBtnFooter');
         downloadBtns.forEach(btn => btn.addEventListener('click', (e) => { e.preventDefault(); generateOfficialResume(); }));
-
-        // YouTube demo links simulation (open placeholder or actual demo)
-        const movieDemo = document.getElementById('movieDemoLink');
-        const movieTrigger = document.getElementById('movieYTTrigger');
-        const etlDemo = document.getElementById('etlDemoLink');
-        const etlTrigger = document.getElementById('etlYTTrigger');
-        function openDemo() { alert("Demo video available on YouTube. Check the GitHub repo for walkthrough. For full demo: https://youtu.be/example (placeholder - upload your actual demo). In your real deployment, replace with actual YouTube link."); window.open("https://www.youtube.com/results?search_query=Movie+Recommendation+KNN+Python", "_blank"); }
-        if(movieDemo) movieDemo.addEventListener('click', (e) => { e.preventDefault(); openDemo(); });
-        if(movieTrigger) movieTrigger.addEventListener('click', (e) => { e.preventDefault(); openDemo(); });
-        if(etlDemo) etlDemo.addEventListener('click', (e) => { e.preventDefault(); alert("ETL Pipeline Demo: End-to-end data engineering project. Full video demonstration available."); window.open("https://www.youtube.com/results?search_query=ETL+Pipeline+Python+Pandas+MySQL", "_blank"); });
-        if(etlTrigger) etlTrigger.addEventListener('click', (e) => { e.preventDefault(); alert("ETL Pipeline analytics demo on YouTube."); window.open("https://www.youtube.com/results?search_query=Python+ETL+Streaming+Analytics", "_blank"); });
     })();
 </script>
 </body>
